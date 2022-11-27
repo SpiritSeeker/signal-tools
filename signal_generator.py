@@ -52,6 +52,11 @@ def sine_wave(
         phase: float
             Phase of the signal (in degrees)
             Default value is `0`.
+
+    Returns
+    -------
+    np.ndarray
+        Array containing the generated sine wave
     """
 
     vpp = kwargs.get("vpp", 2)
@@ -91,6 +96,11 @@ def square_wave(
         phase: float
             Phase of the signal (in degrees)
             Default value is `0`.
+
+    Returns
+    -------
+    np.ndarray
+        Array containing the generated square wave
     """
 
     vpp = kwargs.get("vpp", 1)
