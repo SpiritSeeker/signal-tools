@@ -97,11 +97,7 @@ def square_wave(
     offset = kwargs.get("offset", 0.5)
     phase = kwargs.get("phase", 0)
 
-    # Generate sine wave to threshold and generate a square
-    sine = np.sin(
-        2 * np.pi * ((fin/sample_rate * np.arange(n_points)) + phase/360))
-    square = np.zeros(sine.shape)
-    square[sine < 0] = -vpp/2 + offset
-    square[sine >= 0] = vpp/2 + offset
+    # Generate time points
+    time_points = (phase/360 / fin) + np.arange(n_points)/sample_rate
 
-    return square
+    return (1 - ((2*fin*time_points).astype(np.int32) & 1)) * vpp + (offset - vpp/2)
