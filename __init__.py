@@ -1,3 +1,3 @@
 """Initialize `tools` module."""
 
-from . import signal_generator, spectrum
+from . import filtering, signal_generator, spectrum
