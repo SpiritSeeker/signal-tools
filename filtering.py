@@ -15,6 +15,8 @@ rc_lowpass_filter(
     Implementation of an N-th order RC low pass filter
 """
 
+from typing import Union
+
 import numpy as np
 import scipy.signal
 
@@ -22,8 +24,8 @@ import scipy.signal
 def rc_lowpass_filter(
         data: np.ndarray,
         sample_rate: float,
-        resistors: float | np.ndarray,
-        capacitors: float | np.ndarray,
+        resistors: Union[float, np.ndarray],
+        capacitors: Union[float, np.ndarray],
         order: int = 1
     ) -> np.ndarray:
     """
@@ -97,8 +99,8 @@ def rc_lowpass_filter(
 def rc_highpass_filter(
     data: np.ndarray,
     sample_rate: float,
-    resistors: float | np.ndarray,
-    capacitors: float | np.ndarray,
+    resistors: Union[float, np.ndarray],
+    capacitors: Union[float, np.ndarray],
     order: int = 1
 ) -> np.ndarray:
     """
