@@ -46,7 +46,7 @@ def _compute_spectrum(
     # Compute FFT
     fft = np.fft.fft(windowed_data, nfft)
     if return_onesided:
-        fft = fft[:data.size//2 + 1]
+        fft = fft[:nfft//2 + 1]
     if return_magnitude:
         fft = np.abs(fft)
 
