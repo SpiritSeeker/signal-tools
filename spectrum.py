@@ -262,7 +262,7 @@ def compute_sfdr(
 
     # Get harmonic frequency bins
     freqs = signal_index * \
-        np.arange(2, end_harmonic+1, step=(1 if include_even_harmonics else 2))
+        np.arange(1, end_harmonic+1, step=(1 if include_even_harmonics else 2))[1:]
 
     # Bring harmonic frequencies back to [0:nfft/2]
     freqs = freqs % nfft
